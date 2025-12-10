@@ -12,7 +12,6 @@ import java.util.Map;
 @Service
 public class CitationService {
 
-    // ✅ Metadata extraction
     public Map<String, String> extractMeta(String url) throws IOException {
 
         Document doc = Jsoup.connect(url).get();
@@ -36,7 +35,6 @@ public class CitationService {
         return meta;
     }
 
-    // ✅ APA citation
     public String generateAPA(Map<String, String> m) {
         String author = m.get("author");
         String date = m.get("date");
@@ -44,13 +42,15 @@ public class CitationService {
         String site = m.get("site");
         String url = m.get("url");
 
-        if (author == null || author.isEmpty()) author = "Anonymous";
-        if (date == null || date.isEmpty()) date = "n.d.";
+        if (author == null || author.isEmpty())
+            author = "Anonymous";
+        if (date == null || date.isEmpty())
+            date = "n.d.";
 
         return author + " (" + date + "). " + title + ". " + site + ". " + url;
     }
 
-    // ✅ MLA citation
+    // MLA citation
     public String generateMLA(Map<String, String> m) {
         String author = m.get("author");
         String date = m.get("date");
@@ -58,13 +58,15 @@ public class CitationService {
         String site = m.get("site");
         String url = m.get("url");
 
-        if (author == null || author.isEmpty()) author = "Anonymous";
-        if (date == null || date.isEmpty()) date = "n.d.";
+        if (author == null || author.isEmpty())
+            author = "Anonymous";
+        if (date == null || date.isEmpty())
+            date = "n.d.";
 
         return author + ". \"" + title + ".\" " + site + ", " + date + ", " + url + ".";
     }
 
-    // ✅ IEEE citation
+    // IEEE citation
     public String generateIEEE(Map<String, String> m) {
         String author = m.get("author");
         String date = m.get("date");
@@ -72,8 +74,10 @@ public class CitationService {
         String site = m.get("site");
         String url = m.get("url");
 
-        if (author == null || author.isEmpty()) author = "Anonymous";
-        if (date == null || date.isEmpty()) date = "n.d.";
+        if (author == null || author.isEmpty())
+            author = "Anonymous";
+        if (date == null || date.isEmpty())
+            date = "n.d.";
 
         return "[1] " + author + ", \"" + title + ",\" " + site + ", " + date +
                 ". Available: " + url;
