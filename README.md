@@ -1,15 +1,4 @@
-Perfect — simpler is better 👍
-Here is a **clean, minimal GitHub README** with:
 
-✅ **Author section removed**
-✅ **Resume highlight removed**
-✅ Simple, clear wording
-
-👉 **Copy–paste directly into `README.md`**
-
----
-
-```md
 # 📚 Smart Research Assistant
 
 Smart Research Assistant is a **Chrome extension** that helps users **summarize web content**, take **research notes**, and **generate academic citations** automatically.  
